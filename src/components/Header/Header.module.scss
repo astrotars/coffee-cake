@@ -1,0 +1,169 @@
+@import 'styles/colors.scss';
+@import 'styles/breakpoints.scss';
+@import 'styles/easing.scss';
+
+.root {
+	background-color: #ffffff;
+	display: flex;
+	align-items: stretch;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	z-index: 1;
+	height: 64px;
+	transition: 0.4s box-shadow $standardEasing, 0.4s height $standardEasing;
+
+	@media (min-width: $xs) {
+		justify-content: flex-start;
+		height: 80px;
+	}
+}
+
+.headerRaised {
+	height: 48px;
+	border-bottom: 1px solid transparent;
+	box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.16);
+}
+
+.wrapper {
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding: 0px 16px;
+	max-width: 988px;
+	width: 100%;
+	margin: 0 auto;
+	justify-content: center;
+
+	@media (min-width: $sm) {
+		justify-content: flex-start;
+	}
+}
+
+.brand {
+	@media (min-width: $sm) {
+		flex: 1;
+		min-width: 32px;
+	}
+}
+
+.brandLink {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	flex: 1;
+
+	& > svg {
+		width: 32px;
+		height: 32px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) scale(1);
+		fill: $primary;
+		transition: 0.3s transform $standardEasing, 0.3s opacity $standardEasing;
+
+		@media (min-width: $sm) {
+			position: relative;
+			transform: inherit;
+			top: auto;
+			left: auto;
+		}
+	}
+
+	.headerRaised & > svg {
+		opacity: 0;
+		transform: translate(-50%, calc(-50% - 24px)) scale(0.9);
+
+		@media (min-width: $sm) {
+			opacity: 1;
+			transform: none;
+		}
+	}
+
+	& > h1 {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		opacity: 0;
+		transform: translate(-50%, calc(-50% + 16px)) scale(0.9);
+		transition: 0.3s transform $standardEasing, 0.3s opacity $standardEasing;
+
+		@media (min-width: $sm) {
+			position: relative;
+			transform: inherit;
+			top: auto;
+			left: auto;
+			opacity: 1;
+		}
+	}
+
+	.headerRaised & > h1 {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+
+		@media (min-width: $sm) {
+			opacity: 0;
+			transform: none;
+		}
+	}
+}
+
+.brandSeparator {
+	background-color: $border;
+	height: 24px;
+	margin: 0 16px;
+	width: 1px;
+	display: none;
+	transition: 0.3s opacity;
+
+	@media (min-width: $sm) {
+		display: block;
+	}
+
+	.headerRaised & {
+		@media (min-width: $sm) {
+			opacity: 0;
+		}
+	}
+}
+
+.brandName {
+	font-weight: 600;
+	font-size: 16px;
+}
+
+.actions {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	flex: 1;
+	justify-content: flex-end;
+
+	& > a + a {
+		margin-left: 16px;
+	}
+}
+
+.activeLink {
+	pointer-events: none;
+	& > svg {
+		fill: $primary;
+	}
+}
+
+.leftIcon {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 16px;
+}
+
+.rightIcon {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 16px;
+}

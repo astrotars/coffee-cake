@@ -1,0 +1,165 @@
+@import 'styles/colors.scss';
+@import 'styles/breakpoints.scss';
+
+.root {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin-bottom: 24px;
+	z-index: 0;
+}
+
+.header {
+	display: flex;
+	padding: 16px 24px;
+	align-items: center;
+}
+
+.headerSeparator {
+	background-color: $border;
+	height: 24px;
+	margin: 0 16px;
+	width: 1px;
+}
+
+.userLink {
+	display: flex;
+	align-items: center;
+}
+
+.username {
+	font-weight: 600;
+	margin-left: 8px;
+}
+
+.imgWrapper {
+	padding: 0px 16px;
+}
+
+.img {
+	position: relative;
+	display: flex;
+	width: 100%;
+	background-color: #f2f2f2;
+	padding-bottom: 100%;
+	justify-content: center;
+	align-items: center;
+	background-size: cover;
+}
+
+.feedImg {
+	border-radius: 8px;
+	box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.32);
+}
+
+//
+//  Post Toolbar
+//
+
+.toolbar {
+	margin-top: 8px;
+	padding: 12px 0px;
+	display: flex;
+
+	& > svg + svg {
+		margin-left: 24px;
+	}
+}
+
+.toolbarItem {
+	display: flex;
+	align-items: center;
+
+	& + & {
+		margin-left: 24px;
+	}
+
+	& > span {
+		font-weight: 600;
+		margin-left: 8px;
+	}
+}
+
+.likeCounter {
+	& > svg {
+		fill: $red;
+	}
+
+	& > span {
+		color: $red;
+	}
+}
+
+.commentCounter {
+	& > svg {
+		fill: $primary;
+	}
+
+	& > span {
+		color: $primary;
+	}
+}
+
+//
+//  Post Footer
+//
+
+.footer {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	padding: 80px 24px 16px 24px;
+	background-color: #ffffff;
+	margin-top: -72px;
+	z-index: -1;
+
+	@media (min-width: $xs) {
+		border-radius: 8px;
+		border: 1px solid $border;
+	}
+}
+
+.caption {
+	margin: 8px 0px;
+	& > p {
+		font-size: 12px;
+		line-height: 24px;
+
+		@media (min-width: $xs) {
+			font-size: 16px;
+			line-height: 32px;
+		}
+
+		& > a {
+			font-weight: 700 !important;
+		}
+	}
+}
+
+.comments {
+	display: flex;
+	flex-direction: column;
+	margin-top: 8px;
+}
+
+.comment {
+	font-size: 12px;
+	line-height: 16px;
+
+	& + & {
+		margin-top: 8px;
+	}
+
+	& span {
+		font-weight: 700;
+	}
+}
+
+.timestamp {
+	margin-top: 8px;
+	font-size: 10px;
+	opacity: 0.6;
+	font-weight: 400;
+	text-transform: uppercase;
+}

@@ -1,0 +1,9 @@
+@import 'styles/colors.scss';
+
+.root {
+	display: inline-block;
+	user-select: none;
+	height: 24px;
+	width: 24px;
+	fill: $dark;
+}

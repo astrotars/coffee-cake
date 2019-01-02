@@ -1,0 +1,60 @@
+service: coffee-cake-api
+app: coffee-cake-api
+tenant: stream
+
+frameworkVersion: '>=1.32.0 <2.0.0'
+
+provider:
+    name: aws
+    runtime: nodejs8.10
+    stage: prod
+    region: us-east-1
+    memorySize: 3008
+    environment:
+        DB_URI: 'mongodb+srv://admin:E15KZtxOrdvwEMq7@production-lqqyx.mongodb.net/COFFEECAKE?retryWrites=true'
+        DB_NAME: 'COFFEECAKE'
+        STREAM_ID: 46172
+        STREAM_KEY: 'gpjz4vx49rhq'
+        STREAM_SECRET: 'yg6gk4efzmpr9j8rsqp8h5gha422twb94n6gaywa2jhd8jhu5z3qhxb9ws2sndjx'
+
+functions:
+    signup:
+        handler: handler.signup
+        events:
+            - http:
+                  path: /signup
+                  method: post
+                  cors: true
+    signin:
+        handler: handler.signin
+        events:
+            - http:
+                  path: /signin
+                  method: post
+                  cors: true
+    suggested:
+        handler: handler.suggested
+        events:
+            - http:
+                  path: /suggested
+                  method: get
+                  cors: true
+    update:
+        handler: handler.update
+        events:
+            - http:
+                  path: /update
+                  method: put
+                  cors: true
+
+plugins:
+    - serverless-offline
+    - serverless-webpack
+
+custom:
+    webpack:
+        packager: 'yarn'
+        webpackConfig: 'webpack.config.js'
+        includeModules: true
+    serverless-offline:
+        port: 8000

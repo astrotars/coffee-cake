@@ -1,0 +1,36 @@
+@import 'styles/colors.scss';
+@import 'styles/breakpoints.scss';
+
+.root {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.content {
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.username {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.name {
+    font-size: 8px;
+    opacity: 0.6;
+
+    @media (min-width: $xs) {
+        font-size: 12px;
+    }
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-size: cover;
+}

@@ -1,0 +1,39 @@
+{
+  "name": "coffee-cake",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "prettier": "prettier --config ./.prettierrc --write \"src/**/*.js\""
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "dependencies": {
+    "animated": "^0.2.2",
+    "axios": "^0.18.0",
+    "node-sass": "^4.11.0",
+    "numeral": "^2.0.6",
+    "react": "^16.7.0",
+    "react-activity-feed": "0.6.3",
+    "react-animation-frame": "^1.0.2",
+    "react-dom": "^16.7.0",
+    "react-ink": "^6.4.0",
+    "react-responsive": "^6.0.1",
+    "react-router-dom": "^4.3.1",
+    "simple-google-auth": "^1.0.5"
+  },
+  "devDependencies": {
+    "prettier": "^1.15.3",
+    "react-scripts": "2.1.2"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

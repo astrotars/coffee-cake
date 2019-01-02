@@ -1,0 +1,11 @@
+@import 'styles/breakpoints.scss';
+
+.root {
+	display: flex;
+	position: relative;
+	max-width: 960px;
+	width: 100%;
+	margin: 0 auto 16px;
+	flex-grow: 1;
+	flex-direction: column;
+}

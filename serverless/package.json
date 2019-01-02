@@ -1,0 +1,42 @@
+{
+	"name": "serverless",
+	"version": "1.0.0",
+	"description": "Serverless environment for Coffee Cake API endpoints",
+	"main": "index.js",
+	"author": "Nick Parsons <nparsons08@gmail.com>",
+	"license": "MIT",
+	"private": false,
+	"scripts": {
+		"build": "babel-node ./scripts/build.js",
+		"start": "serverless offline start --skipCacheInvalidation -c",
+		"deploy": "serverless deploy"
+	},
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"getstream": "^3.23.0",
+		"instabio": "^0.0.1",
+		"md5": "^2.2.1",
+		"mongodb": "^3.1.9",
+		"serverless-offline": "^3.31.3",
+		"serverless-webpack": "^5.2.0",
+		"webpack-node-externals": "^1.7.2"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.0.0-beta.40",
+		"@babel/core": "^7.0.0-beta.40",
+		"babel-eslint": "^10.0.1",
+		"babel-loader": "^8.0.0-beta.0",
+		"babel-preset-env": "^1.7.0",
+		"eslint": "^5.8.0",
+		"eslint-plugin-babel": "^5.2.1",
+		"eslint-plugin-import": "^2.14.0",
+		"eslint-plugin-node": "^8.0.0",
+		"eslint-plugin-promise": "^4.0.1",
+		"prettier": "^1.14.3",
+		"serverless-offline": "^3.30.0",
+		"serverless-webpack": "^5.2.0",
+		"source-map-support": "^0.5.9",
+		"webpack": "^4.23.1",
+		"webpack-node-externals": "^1.7.2"
+	}
+}

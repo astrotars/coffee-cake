@@ -1,0 +1,42 @@
+@import 'styles/colors.scss';
+
+.root {
+	background-color: #ffffff;
+	border-radius: 8px;
+	border: 1px solid $border;
+	margin-top: 24px;
+}
+
+.header {
+	position: relative;
+	padding: 16px;
+	border-bottom: 1px solid $border;
+}
+
+.promo {
+	padding: 16px;
+
+	& .user + .user {
+		margin-top: 24px;
+	}
+
+	& > p {
+		line-height: 20px;
+		max-width: 295px;
+	}
+
+	a {
+		color: #ffa86b;
+		text-decoration: underline;
+	}
+}
+
+.item {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.fill {
+	flex: 1 1 auto;
+}

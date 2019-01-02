@@ -1,0 +1,36 @@
+@import 'styles/colors.scss';
+@import 'styles/breakpoints.scss';
+
+.root {
+	display: flex;
+	position: relative;
+	width: 100%;
+	flex-grow: 1;
+	flex-direction: column;
+
+	@media (min-width: $sm) {
+		flex-direction: row;
+	}
+}
+
+.feed {
+	position: relative;
+	max-width: 600px;
+	width: 100%;
+	margin: 0 auto;
+	flex-grow: 1;
+	flex-direction: column;
+
+	@media (min-width: $sm) {
+		margin: inherit;
+		width: 100%;
+		padding: 0px 16px;
+	}
+}
+
+.sidebar {
+	position: sticky;
+	top: 0;
+	flex: 1 0 auto;
+	padding: 0px 16px;
+}

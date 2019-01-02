@@ -1,0 +1,52 @@
+@import 'styles/colors.scss';
+@import 'styles/breakpoints.scss';
+
+.root {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	align-items: stretch;
+	justify-content: flex-start;
+
+	@media (min-width: $xs) {
+		flex-direction: row;
+		margin: 16px 0px;
+	}
+}
+
+.labelWrapper {
+	margin: 8px 0px;
+
+	& > label {
+		font-size: 12px;
+		font-weight: 600;
+
+		@media (min-width: $xs) {
+			font-size: 16px;
+		}
+	}
+
+	@media (min-width: $xs) {
+		flex: 0 0 160px;
+		text-align: right;
+		padding: 0px 32px;
+	}
+}
+
+.inputWrapper {
+	position: relative;
+	display: flex;
+	align-items: stretch;
+	justify-content: flex-start;
+	flex: 1;
+
+	& > input,
+	& > textarea {
+		font-size: 16px;
+		border: 1px solid $border;
+		border-radius: 4px;
+		background-color: transparent;
+		flex: 1 1 360px;
+		padding: 8px;
+	}
+}
