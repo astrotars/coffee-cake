@@ -39,13 +39,6 @@ functions:
                   path: /suggested
                   method: get
                   cors: true
-    update:
-        handler: handler.update
-        events:
-            - http:
-                  path: /update
-                  method: put
-                  cors: true
 
 plugins:
     - serverless-offline

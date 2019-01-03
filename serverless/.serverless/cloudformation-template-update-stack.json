@@ -23,12 +23,6 @@
         "LogGroupName": "/aws/lambda/coffee-cake-api-prod-suggested"
       }
     },
-    "UpdateLogGroup": {
-      "Type": "AWS::Logs::LogGroup",
-      "Properties": {
-        "LogGroupName": "/aws/lambda/coffee-cake-api-prod-update"
-      }
-    },
     "IamRoleLambdaExecution": {
       "Type": "AWS::IAM::Role",
       "Properties": {
@@ -77,9 +71,6 @@
                     },
                     {
                       "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/coffee-cake-api-prod-suggested:*"
-                    },
-                    {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/coffee-cake-api-prod-update:*"
                     }
                   ]
                 },
@@ -97,9 +88,6 @@
                     },
                     {
                       "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/coffee-cake-api-prod-suggested:*:*"
-                    },
-                    {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/coffee-cake-api-prod-update:*:*"
                     }
                   ]
                 }
@@ -128,7 +116,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/coffee-cake-api/prod/1546452002672-2019-01-02T18:00:02.672Z/coffee-cake-api.zip"
+          "S3Key": "serverless/coffee-cake-api/prod/1546531832306-2019-01-03T16:10:32.306Z/coffee-cake-api.zip"
         },
         "FunctionName": "coffee-cake-api-prod-signup",
         "Handler": "handler.signup",
@@ -173,7 +161,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/coffee-cake-api/prod/1546452002672-2019-01-02T18:00:02.672Z/coffee-cake-api.zip"
+          "S3Key": "serverless/coffee-cake-api/prod/1546531832306-2019-01-03T16:10:32.306Z/coffee-cake-api.zip"
         },
         "FunctionName": "coffee-cake-api-prod-signin",
         "Handler": "handler.signin",
@@ -218,7 +206,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/coffee-cake-api/prod/1546452002672-2019-01-02T18:00:02.672Z/coffee-cake-api.zip"
+          "S3Key": "serverless/coffee-cake-api/prod/1546531832306-2019-01-03T16:10:32.306Z/coffee-cake-api.zip"
         },
         "FunctionName": "coffee-cake-api-prod-suggested",
         "Handler": "handler.suggested",
@@ -252,51 +240,6 @@
       "Properties": {
         "FunctionName": {
           "Ref": "SuggestedLambdaFunction"
-        },
-        "CodeSha256": "33ufFBYxarNxplt7R4g8RytH/kBsvPEBG0vfNLKunN8="
-      }
-    },
-    "UpdateLambdaFunction": {
-      "Type": "AWS::Lambda::Function",
-      "Properties": {
-        "Code": {
-          "S3Bucket": {
-            "Ref": "ServerlessDeploymentBucket"
-          },
-          "S3Key": "serverless/coffee-cake-api/prod/1546452002672-2019-01-02T18:00:02.672Z/coffee-cake-api.zip"
-        },
-        "FunctionName": "coffee-cake-api-prod-update",
-        "Handler": "handler.update",
-        "MemorySize": 3008,
-        "Role": {
-          "Fn::GetAtt": [
-            "IamRoleLambdaExecution",
-            "Arn"
-          ]
-        },
-        "Runtime": "nodejs8.10",
-        "Timeout": 6,
-        "Environment": {
-          "Variables": {
-            "DB_URI": "mongodb+srv://admin:E15KZtxOrdvwEMq7@production-lqqyx.mongodb.net/COFFEECAKE?retryWrites=true",
-            "DB_NAME": "COFFEECAKE",
-            "STREAM_ID": 46172,
-            "STREAM_KEY": "gpjz4vx49rhq",
-            "STREAM_SECRET": "yg6gk4efzmpr9j8rsqp8h5gha422twb94n6gaywa2jhd8jhu5z3qhxb9ws2sndjx"
-          }
-        }
-      },
-      "DependsOn": [
-        "UpdateLogGroup",
-        "IamRoleLambdaExecution"
-      ]
-    },
-    "UpdateLambdaVersionpc89hJT9BkQtHkeIE0YErGvps5tVrh2dzvLPOjSnWco": {
-      "Type": "AWS::Lambda::Version",
-      "DeletionPolicy": "Retain",
-      "Properties": {
-        "FunctionName": {
-          "Ref": "UpdateLambdaFunction"
         },
         "CodeSha256": "33ufFBYxarNxplt7R4g8RytH/kBsvPEBG0vfNLKunN8="
       }
@@ -352,21 +295,6 @@
           ]
         },
         "PathPart": "suggested",
-        "RestApiId": {
-          "Ref": "ApiGatewayRestApi"
-        }
-      }
-    },
-    "ApiGatewayResourceUpdate": {
-      "Type": "AWS::ApiGateway::Resource",
-      "Properties": {
-        "ParentId": {
-          "Fn::GetAtt": [
-            "ApiGatewayRestApi",
-            "RootResourceId"
-          ]
-        },
-        "PathPart": "update",
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         }
@@ -513,53 +441,6 @@
         }
       }
     },
-    "ApiGatewayMethodUpdateOptions": {
-      "Type": "AWS::ApiGateway::Method",
-      "Properties": {
-        "AuthorizationType": "NONE",
-        "HttpMethod": "OPTIONS",
-        "MethodResponses": [
-          {
-            "StatusCode": "200",
-            "ResponseParameters": {
-              "method.response.header.Access-Control-Allow-Origin": true,
-              "method.response.header.Access-Control-Allow-Headers": true,
-              "method.response.header.Access-Control-Allow-Methods": true,
-              "method.response.header.Access-Control-Allow-Credentials": true
-            },
-            "ResponseModels": {}
-          }
-        ],
-        "RequestParameters": {},
-        "Integration": {
-          "Type": "MOCK",
-          "RequestTemplates": {
-            "application/json": "{statusCode:200}"
-          },
-          "ContentHandling": "CONVERT_TO_TEXT",
-          "IntegrationResponses": [
-            {
-              "StatusCode": "200",
-              "ResponseParameters": {
-                "method.response.header.Access-Control-Allow-Origin": "'*'",
-                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
-                "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,PUT'",
-                "method.response.header.Access-Control-Allow-Credentials": "'false'"
-              },
-              "ResponseTemplates": {
-                "application/json": ""
-              }
-            }
-          ]
-        },
-        "ResourceId": {
-          "Ref": "ApiGatewayResourceUpdate"
-        },
-        "RestApiId": {
-          "Ref": "ApiGatewayRestApi"
-        }
-      }
-    },
     "ApiGatewayMethodSignupPost": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
@@ -689,50 +570,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayMethodUpdatePut": {
-      "Type": "AWS::ApiGateway::Method",
-      "Properties": {
-        "HttpMethod": "PUT",
-        "RequestParameters": {},
-        "ResourceId": {
-          "Ref": "ApiGatewayResourceUpdate"
-        },
-        "RestApiId": {
-          "Ref": "ApiGatewayRestApi"
-        },
-        "ApiKeyRequired": false,
-        "AuthorizationType": "NONE",
-        "Integration": {
-          "IntegrationHttpMethod": "POST",
-          "Type": "AWS_PROXY",
-          "Uri": {
-            "Fn::Join": [
-              "",
-              [
-                "arn:",
-                {
-                  "Ref": "AWS::Partition"
-                },
-                ":apigateway:",
-                {
-                  "Ref": "AWS::Region"
-                },
-                ":lambda:path/2015-03-31/functions/",
-                {
-                  "Fn::GetAtt": [
-                    "UpdateLambdaFunction",
-                    "Arn"
-                  ]
-                },
-                "/invocations"
-              ]
-            ]
-          }
-        },
-        "MethodResponses": []
-      }
-    },
-    "ApiGatewayDeployment1546452002773": {
+    "ApiGatewayDeployment1546531832375": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -744,11 +582,9 @@
         "ApiGatewayMethodSignupOptions",
         "ApiGatewayMethodSigninOptions",
         "ApiGatewayMethodSuggestedOptions",
-        "ApiGatewayMethodUpdateOptions",
         "ApiGatewayMethodSignupPost",
         "ApiGatewayMethodSigninPost",
-        "ApiGatewayMethodSuggestedGet",
-        "ApiGatewayMethodUpdatePut"
+        "ApiGatewayMethodSuggestedGet"
       ]
     },
     "SignupLambdaPermissionApiGateway": {
@@ -891,53 +727,6 @@
           ]
         }
       }
-    },
-    "UpdateLambdaPermissionApiGateway": {
-      "Type": "AWS::Lambda::Permission",
-      "Properties": {
-        "FunctionName": {
-          "Fn::GetAtt": [
-            "UpdateLambdaFunction",
-            "Arn"
-          ]
-        },
-        "Action": "lambda:InvokeFunction",
-        "Principal": {
-          "Fn::Join": [
-            "",
-            [
-              "apigateway.",
-              {
-                "Ref": "AWS::URLSuffix"
-              }
-            ]
-          ]
-        },
-        "SourceArn": {
-          "Fn::Join": [
-            "",
-            [
-              "arn:",
-              {
-                "Ref": "AWS::Partition"
-              },
-              ":execute-api:",
-              {
-                "Ref": "AWS::Region"
-              },
-              ":",
-              {
-                "Ref": "AWS::AccountId"
-              },
-              ":",
-              {
-                "Ref": "ApiGatewayRestApi"
-              },
-              "/*/*"
-            ]
-          ]
-        }
-      }
     }
   },
   "Outputs": {
@@ -962,12 +751,6 @@
       "Description": "Current Lambda function version",
       "Value": {
         "Ref": "SuggestedLambdaVersionNIRnBM79cbF0eVAuz09m6LTDmAxtrwVF0X0pCr53YE4"
-      }
-    },
-    "UpdateLambdaFunctionQualifiedArn": {
-      "Description": "Current Lambda function version",
-      "Value": {
-        "Ref": "UpdateLambdaVersionpc89hJT9BkQtHkeIE0YErGvps5tVrh2dzvLPOjSnWco"
       }
     },
     "ServiceEndpoint": {
