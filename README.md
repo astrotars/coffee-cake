@@ -45,6 +45,16 @@ REACT_APP_API_ENDPOINT=YOUR_SERVERLESS_API_ENDPOINT
 
 > Note: You will need to deploy the `serverless` directory with the `sls deploy` command. After deploying to AWS, you will then need to ensure that the AWS Gateway endpoint is live. For further instructions, please refer to [AWS](https://aws.amazon.com) or [Serverless](https://serverless.com).
 
+You will also need to set the following environment variables in your `serverless.yml` file, located inside of the `serverless` directory.
+
+```
+DB_URI: YOUR_MONGODB_URI
+DB_NAME: YOUR_MONGODB_DB_NAME
+STREAM_ID: YOUR_STREAM_APP_ID
+STREAM_KEY: YOUR_STREAM_API_KEY
+STREAM_SECRET: YOUR_STREAM_API_SECRET
+```     
+
 ## Starting Coffee Cake 🚀
 
 Coffee Cake was bootstrapped with Create React App, allowing for fast and easy development. The app has not been ejected and I don't advise doing so. With that being said, you can run `yarn start` to kickoff the app on port `3000`, making it available locally at `https://localhost:3000`.
