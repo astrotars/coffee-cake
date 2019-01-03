@@ -28,8 +28,6 @@ export default (WrappedComponent) => {
             );
             const user = await client.currentUser.get();
 
-            console.log(user);
-
             this.setState({
                 user: Object.assign({}, user.data, { token, client }),
                 loading: false,
