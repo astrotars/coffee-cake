@@ -2,7 +2,7 @@
 
 Coffee Cake is a sample web app built with React and Stream's React Components. General data such as a users name, password, and email address are stored in [MongoDB](https://cloud.mongodb.com), whereas other data is persisted in [Stream](https://getstream.io). Server side handling is processed by [AWS Lambda](https://aws.amazon.com/lambda/) using the [Serverless](https://serverless.com) framework.
 
-For simplicity, Coffee Cake does not make use of Redux. All API calls are made via [Axios](https://github.com/axios/axios). Calls to Stream are handled by the [Stream JS](https://github.com/GetStream/stream-js) client, and login with Google is facilitated by [Simple Google Auth](https://github.com/hepiska/simple-google-auth). 
+For simplicity, Coffee Cake does not make use of Redux. All API calls are made via [Axios](https://github.com/axios/axios). Calls to Stream are handled by the [Stream JS](https://github.com/GetStream/stream-js) client, and login with Google is facilitated by [Simple Google Auth](https://github.com/hepiska/simple-google-auth).
 
 > Note: All social functionality is provided by Stream's [React Components](https://getstream.io/react-activity-feed/), a 100% free component library offering access to dozens of React components with various functionality.
 
@@ -90,6 +90,16 @@ As Coffee Cake is an experimental application to demo the functionality of Strea
 -   Tests
 -   Hashtags (support Stream's built-in support with a page to view all posts with corresponding hashtags)
 -   Notifications (use Stream's React Component Notification dropdown to display likes, posts, and @mentions)
+
+## Links 🖇
+
+-   [Coffee Cake Demo](https://coffeecake.app)
+-   [Stream](https://getstream.io)
+-   [Stream Documentation](https://getstream.io/docs/)
+-   [Stream React Component Documentation](https://getstream.github.io/react-activity-feed/)
+-   [Netlify](https://netlify.com)
+-   [MongoDB Atlas](https://cloud.mongodb.com)
+-   [Serverless](https://dashboard.serverless.com)
 
 ## Available Scripts 📜
 
