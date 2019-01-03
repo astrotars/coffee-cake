@@ -63,6 +63,12 @@ The easiest way to upload to Lambda is to use the Serverless command. Assuming t
 serverless deploy
 ```
 
+or
+
+```
+sls deploy
+```
+
 > Note: If you'd like to run your Lambda locally, you can bypass the deployment to AWS Lambda by running `yarn start`. This will mock the AWS Lambda services, allowing you to use the service on port `8080`.
 
 ## Starting Coffee Cake 🚀
