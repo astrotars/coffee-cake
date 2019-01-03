@@ -26,7 +26,7 @@ If you'd like to create a custom version of Coffee Cake locally, you'll need to 
 1. [Stream](https://getstream.io)
 2. [MongoDB Atlas](https://cloud.mongodb.com)
 3. [Serverless](https://dashboard.serverless.com)
-4. [Google](https://google.com)
+4. [Google Identify Platform](https://developers.google.com/identity/)
 
 Once you have provisioned the above accounts, please create a `.env` file in the root directory of the project with the following:
 
