@@ -53,7 +53,17 @@ DB_NAME: YOUR_MONGODB_DB_NAME
 STREAM_ID: YOUR_STREAM_APP_ID
 STREAM_KEY: YOUR_STREAM_API_KEY
 STREAM_SECRET: YOUR_STREAM_API_SECRET
-```     
+```
+
+## Uploading Code to AWS Lambda via Serverless 👌
+
+The easiest way to upload to Lambda is to use the Serverless command. Assuming that you have configured the AWS CLI with your credentials and installed the Serverless CLI with `npm install -g serverless`, you can run the following command:
+
+```
+serverless deploy
+```
+
+> Note: If you'd like to run your Lambda locally, you can bypass the deployment to AWS Lambda by running `yarn start`. This will mock the AWS Lambda services, allowing you to use the service on port `8080`.
 
 ## Starting Coffee Cake 🚀
 
