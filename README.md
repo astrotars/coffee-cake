@@ -83,7 +83,7 @@ Coffee Cake was bootstrapped with Create React App, allowing for fast and easy d
 
 ## Next Steps 💰
 
-As Coffee Cake is an experimental application to demo the functionality of Stream's React Components, additional features will be added to the app in the future. Coffee Cake is also open-source, so please feel free to contribute to the project with PR's. Here's are a couple of things that could be implemented by you in Coffee Cake:
+As Coffee Cake is an experimental application to demo the functionality of Stream's React Components, additional features will be added to the app in the future. Coffee Cake is also open-source, so please feel free to contribute to the project with PR's. Here are a couple of things that could be implemented by you in Coffee Cake:
 
 -   Profile Page (with a list of posts that the user created)
 -   Edit Profile Page (ability to update profile information – e.g. username, name, bio, password, etc.)
