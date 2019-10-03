@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "prettier": "^1.15.3",
-    "react-scripts": "2.1.2"
+    "react-scripts": "3.2.0"
   },
   "browserslist": [
     ">0.2%",
