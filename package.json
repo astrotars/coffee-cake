@@ -20,7 +20,7 @@
     "react": "^16.7.0",
     "react-activity-feed": "0.6.3",
     "react-animation-frame": "^1.0.2",
-    "react-dom": "^16.7.0",
+    "react-dom": "^16.11.0",
     "react-ink": "^6.4.0",
     "react-responsive": "^6.0.1",
     "react-router-dom": "^4.3.1",
