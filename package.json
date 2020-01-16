@@ -15,7 +15,7 @@
   "dependencies": {
     "animated": "^0.2.2",
     "axios": "^0.18.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "numeral": "^2.0.6",
     "react": "^16.7.0",
     "react-activity-feed": "0.6.3",
