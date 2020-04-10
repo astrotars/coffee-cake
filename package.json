@@ -18,7 +18,7 @@
     "node-sass": "^4.11.0",
     "numeral": "^2.0.6",
     "react": "^16.7.0",
-    "react-activity-feed": "0.6.3",
+    "react-activity-feed": "0.10.2",
     "react-animation-frame": "^1.0.2",
     "react-dom": "^16.7.0",
     "react-ink": "^6.4.0",
