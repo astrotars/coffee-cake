@@ -17,7 +17,7 @@
     "axios": "^0.18.0",
     "node-sass": "^4.11.0",
     "numeral": "^2.0.6",
-    "react": "^16.7.0",
+    "react": "^16.14.0",
     "react-activity-feed": "0.6.3",
     "react-animation-frame": "^1.0.2",
     "react-dom": "^16.7.0",
